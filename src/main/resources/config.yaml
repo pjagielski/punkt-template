@@ -1,0 +1,6 @@
+configuration:
+  track:
+    bpm: 95
+  locations:
+    samples: work/samples
+    loops: work/loops
