@@ -2,5 +2,6 @@ configuration:
   track:
     bpm: 95
   locations:
+    liveFile: src/main/kotlin/live.kts
     samples: work/samples
     loops: work/loops

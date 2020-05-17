@@ -1,12 +1,18 @@
 plugins {
     java
+    application
     kotlin("jvm") version "1.3.70"
 }
 
-group = "pl.jagielski"
+group = "pl.pjagielski"
 version = "0.1.0-SNAPSHOT"
 
+application {
+    mainClassName = "pl.pjagielski.MainKt"
+}
+
 repositories {
+    mavenLocal()
     mavenCentral()
     maven {
         url = uri("https://dl.bintray.com/punkt/punkt")
@@ -15,7 +21,7 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
-    implementation("pl.pjagielski", "punkt", "0.1.0")
+    implementation("pl.pjagielski", "punkt", "0.2.0")
     runtimeOnly("org.slf4j","slf4j-simple","1.7.29")
 }
 
