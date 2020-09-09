@@ -21,7 +21,7 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
-    implementation("pl.pjagielski", "punkt", "0.2.0")
+    implementation("pl.pjagielski", "punkt", "0.3.0")
     runtimeOnly("org.slf4j","slf4j-simple","1.7.29")
 }
 
