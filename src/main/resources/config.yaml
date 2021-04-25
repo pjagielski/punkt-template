@@ -2,6 +2,6 @@ configuration:
   track:
     bpm: 95
   locations:
-    liveFile: src/main/kotlin/live.kts
+    liveFile: src/main/kotlin/still.kts
     samples: work/samples
     loops: work/loops

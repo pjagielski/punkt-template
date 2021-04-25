@@ -1,7 +1,7 @@
 plugins {
     java
     application
-    kotlin("jvm") version "1.3.70"
+    kotlin("jvm") version "1.4.32"
 }
 
 group = "pl.pjagielski"
@@ -14,19 +14,20 @@ application {
 repositories {
     mavenLocal()
     mavenCentral()
-    maven {
-        url = uri("https://dl.bintray.com/punkt/punkt")
-    }
+    maven("https://jitpack.io")
 }
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
-    implementation("pl.pjagielski", "punkt", "0.3.0")
+    implementation("com.github.pjagielski", "punkt", "master-SNAPSHOT") {
+        exclude("org.slf4j", "slf4j-api")
+        exclude("org.slf4j", "slf4j-log4j12")
+    }
     runtimeOnly("org.slf4j","slf4j-simple","1.7.29")
 }
 
 configure<JavaPluginConvention> {
-    sourceCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_11
 }
 
 tasks.test {
@@ -38,9 +39,9 @@ tasks.test {
 
 tasks {
     compileKotlin {
-        kotlinOptions.jvmTarget = "1.8"
+        kotlinOptions.jvmTarget = "11"
     }
     compileTestKotlin {
-        kotlinOptions.jvmTarget = "1.8"
+        kotlinOptions.jvmTarget = "11"
     }
 }
